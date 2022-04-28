@@ -1,0 +1,249 @@
+.filmContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.backBtn {
+    cursor: pointer;
+    font-size: 24px;
+    color: rgb(218, 0, 218);
+    margin: 50px auto auto 25px;
+}
+
+.filmTitle {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    width: 75%;
+    margin: 50px auto;
+    border-radius: 12px;
+    font-size: 60px;
+    color: rgba(255, 0, 162);
+    text-align: center;
+}
+
+.iFrameContainer {
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    padding-top: 0%;
+    border-radius: 12px;
+    width: 90%;
+    height: 720px;
+}
+
+.trailerWrapper {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    border-radius: 12px;
+}
+
+/* Details bar */
+
+.detBarWrapper {
+    width: 75%;
+    height: 75px;
+    margin: 50px auto 25px auto;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.25);
+    display: flex;
+    flex-direction: row;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.yearWrap {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-top: none;
+    border-left: none;
+    border-bottom: none;
+    border-radius: 12px 0px 0px 12px;
+}
+
+.directorWrap {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.directedBy {
+    font-size: 20px;
+    margin-right: 10px;
+    color: rgba(125, 125, 125)
+}
+
+.runtimeWrap {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0px 12px 12px 0px;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.runtimeText {
+    margin: 5px 0 0 0;
+}
+
+.runtimeValue {
+    margin-top: 10px;
+}
+
+/* Blurb */
+
+.blurbWrapper {
+    width: 75%;
+    margin: auto;
+    border-radius: 12px;
+    padding: 10px 20px;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.blurbTitle {
+    font-weight: 800;
+    text-align: center;
+}
+
+.blurbText {
+    font-size: 20px;
+}
+
+/* Details */
+
+.detailsWrapper {
+    width: 75%;
+    background-color: rgba(255, 255, 255, 0.05);
+    margin: 20px auto;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.detailBox {
+    width: 20%;
+    margin: 0;
+    text-align: center;
+}
+
+.detailTitle {
+    color: red;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.detailEntries {
+    font-size: 16px;
+}
+
+.actor_scoreWrapper {
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.not_actWrap {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    border-radius: 12px;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.not_actTitle {
+    color: red;
+    margin: 5px auto;
+    font-size: 14px;
+}
+
+.not_actEntries {
+    margin: 10px auto;
+    font-size: 18px;
+}
+
+.review_scoreWrap {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid white;
+    border-radius: 12px;
+    width: 25%;
+    margin-left: 20px;
+}
+
+.review_scoreText {
+    font-size: 60px;
+    text-align: center;
+    color: rgb(255, 0, 255);
+}
+
+.triviaWrapper {
+    width: 50%;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.05);
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.triviaTitle {
+    color: red;
+    text-align: center;
+}
+
+.triviaText {
+    font-size: 20px;
+}
+
+.reviewWrapper {
+    width: 75%;
+    margin: 50px auto 25px auto;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px 20px;
+    border-radius: 12px;
+}
+
+.reviewHeadline {
+    font-size: 36px;
+    text-align: center;
+}
+
+.reviewText {
+    text-align: justify;
+    font-size: 20px;
+}
