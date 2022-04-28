@@ -147,21 +147,6 @@
     background-color: rgba(0, 0, 0, 0.25);
 }
 
-.detailBox {
-    width: 20%;
-    margin: 0;
-    text-align: center;
-}
-
-.detailTitle {
-    color: red;
-    font-weight: 700;
-    font-size: 12px;
-}
-
-.detailEntries {
-    font-size: 16px;
-}
 
 .actor_scoreWrapper {
     width: 75%;

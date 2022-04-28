@@ -3,6 +3,8 @@ import styles from '../styles/Film.module.css';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
+import DetailBox from '../components/detailBox';
+
 export default function Film ({ film }) {
 
     const [name, setName] = useState('');
@@ -108,31 +110,20 @@ export default function Film ({ film }) {
 
                 <div className = {styles.detailsWrapper}>
 
-                    <div className = {styles.detailBox}>
-                        <h3 className = {styles.detailTitle}>GENRES</h3>
-                        <p className = {styles.detailEntries}>{ film[0].genre.map(genre => (<>{genre}<br/></>)) }</p>
-                    </div>
+                    <DetailBox title = "GENRES"
+                        entry = {film[0].genre.map(genre => (<>{genre}<br/></>))} />
 
-                    <div className = {styles.detailBox}>
-                        <h3 className = {styles.detailTitle}>WRITER(S)</h3>
-                        <p className = {styles.detailEntries}>{ film[0].writers.map(writer => (<>{writer}<br/></>)) }</p>
-                    </div>
+                    <DetailBox title = "WRITER(S)"
+                        entry = {film[0].writers.map(writer => (<>{writer}<br/></>))} />
 
-                    <div className = {styles.detailBox}>
-                        <h3 className = {styles.detailTitle}>CINEMATOGRAPHY</h3>
-                        <p className = {styles.detailEntries}>{ film[0].cinematography.map(artist => (<>{artist}<br/></>)) }</p>
-                    </div>
+                    <DetailBox title = "CINEMATOGRAPHY"
+                        entry = {film[0].cinematography.map(artist => (<>{artist}<br/></>))} />
 
-                    <div className = {styles.detailBox}>
-                        <h3 className = {styles.detailTitle}>SOUNDTRACK</h3>
-                        <p className = {styles.detailEntries}>{ film[0].soundtrack.map(artist => (<>{artist}<br/></>))}</p>
-                    </div>
+                    <DetailBox title = "SOUNDTRACK"
+                        entry = {film[0].soundtrack.map(artist => (<>{artist}<br/></>))} />
 
-                    <div className = {styles.detailBox}>
-                        <h3 className = {styles.detailTitle}>CATEGORIES</h3>
-                        <p className = {styles.detailEntries}>{ film[0].special_category.map(category => (<>{ category }<br/></>)) }</p>
-                    </div>
-
+                    <DetailBox title = "CATEGORIES"
+                        entry = {film[0].special_category.map(category => (<>{ category }<br/></>))} />
                 </div>
 
                 <div className = {styles.actor_scoreWrapper}>
