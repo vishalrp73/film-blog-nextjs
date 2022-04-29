@@ -8,3 +8,7 @@
     margin: 20px;
     cursor: pointer;
 }
+
+.movieBoxContainer:hover {
+    border: 5px dashed rgb(255, 123, 0);
+}

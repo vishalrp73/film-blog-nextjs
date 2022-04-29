@@ -1,4 +1,7 @@
 import { useRouter } from 'next/router';
+import Image from 'next/image';
+import upvote from '../public/upvote-icon.png';
+import downvote from '../public/downvote-icon.png';
 import styles from '../styles/Film.module.css';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -12,6 +15,8 @@ export default function Film ({ film }) {
     const [randBackImg, setRandBackImg] = useState(0);
     const [trivia, setTrivia] = useState('');
     const [paragraph, setParagraph] = useState([]);
+
+    const [displayError, setDisplayError] = useState(false);
 
     const router = useRouter();
 
@@ -153,28 +158,73 @@ export default function Film ({ film }) {
                         </p>
                     </div>
 
-                {
-                    film[0].comments.map(comment => {
-                        return (
-                            <div key = {comment._id}>
-                                <p>{comment._id}</p>
-                                <p>{comment.name}</p>
-                                <p>{comment.comment_text}</p>
-                                <h5 onClick = {() => tagComment(comment._id, 1)}
-                                    style = {{cursor: 'pointer', fontSize: '24px'}}>
-                                        {comment.upvotes}
-                                </h5>
-                                <h5 onClick = {() => tagComment(comment._id, 0)}
-                                    style = {{cursor: 'pointer', fontSize: '24px'}}>{comment.downvotes}</h5>
-                                <p>{new Date (comment.timestamp).toLocaleString()}</p>
-                                <hr />
+                    <div className = {styles.commentsContainer}>
+                        <h3 className = {styles.commentHeader}>What are your thoughts on this movie?</h3>
+
+                        <div className = {styles.commentInput}>
+                            <textarea className = {styles.commentTextInput}
+                                placeholder = '* Enter a comment !'
+                                onChange = { (e) => setCommentText(e.target.value)} />
+
+                            <div className = {styles.rightBar}>
+                                <input type = 'text' placeholder = '* name' className = {styles.commentNameInput}
+                                    onChange = {(e) => setName(e.target.value)} />
+                                
+                                <input type = 'button'
+                                    className = {styles.commentPostBtn}
+                                    onClick = { () => submitComment()}
+                                    value = 'POST' />
                             </div>
-                        )
-                    })
-                }
-                <input type = 'text' onChange = {(e) => setName(e.target.value)} />
-                <input type = 'text' onChange = {(e) => setCommentText(e.target.value)} />
-                <button onClick = {() => submitComment()}>Submit Comment</button>
+                        </div>
+
+                        <div className = {styles.displayWrapper}>
+                            <p className = {styles.displayText}
+                                style = {{color: displayError ? 'red' : 'lightgreen'}}>
+                                    Please don't abuse the comment section, I really don't want to have to come down
+                                    there and start deleting shit, I'm just too lazy.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className = {styles.commentListContainer}>
+                        {
+                            film[0].comments.map(comment => {
+                                return (
+                                    <div key = {comment._id} className = {styles.individualCommentWrap}>
+                                        <div className = {styles.leftPortion}>
+                                            <p className = {styles.commentText}>{comment.comment_text}</p>
+                                            <div className = {styles.voteBar}>
+                                                <div className = {styles.voteContainer}>
+                                                    <Image
+                                                        src = {upvote}
+                                                        alt = 'upvote icon'
+                                                        width = '20px'
+                                                        height = '20px'
+                                                        className = {styles.voteImg} />
+                                                    <p className = {styles.tally} id = {styles.upvoteTally}>{comment.upvotes}</p>
+                                                </div>
+
+                                                <div className = {styles.voteContainer}>
+                                                    <Image
+                                                        src = {downvote}
+                                                        alt = 'downvote icon'
+                                                        width = '20px'
+                                                        height = '20px'
+                                                        className = {styles.voteImg} />
+                                                    <p className = {styles.tally} id = {styles.downvoteTally}>{comment.downvotes}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className = {styles.rightPortion}>
+                                            <h4 className = {styles.commentName}>{comment.name}</h4>
+                                            <h5 className = {styles.commentTimestamp}>{new Date(comment.timestamp).toLocaleString()}</h5>
+                                        </div>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
         </div>
     )
 }

@@ -39,7 +39,7 @@ export default function Home ({ films }) {
                     <h3 className = {styles.genreTitle}>{entry[0].toUpperCase()}</h3>
                     <div className = {styles.filmsContainer}>
                       {
-                        entry[1].map(film => {
+                        (entry[1].sort((a, b) => 0.5 - Math.random())).map(film => {
                           return <MovieBox key = {film._id} film = {film} />
                         })
                       }
